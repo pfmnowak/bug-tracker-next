@@ -11,14 +11,14 @@ import { fakeTasks } from "../mock/tasks";
 
 export default function Tasks() {
   const tasks = fakeTasks;
+
   if (!tasks || tasks.length === 0) {
     return <p>{`There are no tasks! Start off by creating one :)`}</p>;
   }
 
   return (
-    <Box sx={{ backgroundColor: "white" }}>
-      {/* A table with all of the tasks */}
-      <Typography sx={{ color: "black" }}>All Tasks</Typography>
+    <Box>
+      <Typography>All Tasks</Typography>
       <Box>
         <Table>
           <TableHead>

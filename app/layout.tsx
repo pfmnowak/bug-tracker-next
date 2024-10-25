@@ -1,14 +1,16 @@
-import theme from "@/app/ui/theme";
 import {
   Box,
   Container,
   CssBaseline,
-  Drawer,
+  Divider,
   ThemeProvider,
 } from "@mui/material";
+
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
-import "./globals.css";
+import Header from "./layout/Header";
+import Sidebar from "./layout/Sidebar";
+import theme from "./ui/theme";
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
@@ -30,14 +32,26 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.variable}>
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={theme} defaultMode="light">
           <CssBaseline enableColorScheme />
-          <Drawer variant="permanent">
-            <Box sx={{ px: 2 }}>Drawer content</Box>
-          </Drawer>
-          <Container sx={{ width: "100%", height: "100vh" }}>
-            {children}
-          </Container>
+          <Sidebar />
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              height: "100vh",
+              ml: "280px",
+            }}
+          >
+            <Header />
+            <Divider sx={{ mx: 3 }} />
+            <Container
+              maxWidth={false}
+              sx={{ maxWidth: "100%", width: "100%", flex: 1, pb: 3 }}
+            >
+              {children}
+            </Container>
+          </Box>
         </ThemeProvider>
       </body>
     </html>
