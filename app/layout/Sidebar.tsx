@@ -1,4 +1,5 @@
-import { Box, Drawer } from "@mui/material";
+import { Drawer } from "@mui/material";
+import Link from "next/link";
 
 const Sidebar = () => {
   return (
@@ -12,7 +13,8 @@ const Sidebar = () => {
         },
       }}
     >
-      <Box>Drawer content</Box>
+      <Link href="/">Home</Link>
+      <Link href="/tasks">Tasks</Link>
     </Drawer>
   );
 };
