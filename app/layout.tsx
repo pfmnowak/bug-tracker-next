@@ -8,6 +8,8 @@ import {
 
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
+import { Providers } from "./Providers";
+import SessionGuard from "./components/SessionGuard";
 import Header from "./layout/Header";
 import Sidebar from "./layout/Sidebar";
 import theme from "./ui/theme";
@@ -32,27 +34,31 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.variable}>
-        <ThemeProvider theme={theme} defaultMode="light">
-          <CssBaseline enableColorScheme />
-          <Sidebar />
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              height: "100vh",
-              ml: "280px",
-            }}
-          >
-            <Header />
-            <Divider sx={{ mx: 3 }} />
-            <Container
-              maxWidth={false}
-              sx={{ maxWidth: "100%", width: "100%", flex: 1, pb: 3 }}
-            >
-              {children}
-            </Container>
-          </Box>
-        </ThemeProvider>
+        <Providers>
+          <SessionGuard>
+            <ThemeProvider theme={theme} defaultMode="light">
+              <CssBaseline enableColorScheme />
+              <Sidebar />
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  height: "100vh",
+                  ml: "280px",
+                }}
+              >
+                <Header />
+                <Divider sx={{ mx: 3 }} />
+                <Container
+                  maxWidth={false}
+                  sx={{ maxWidth: "100%", width: "100%", flex: 1, pb: 3 }}
+                >
+                  {children}
+                </Container>
+              </Box>
+            </ThemeProvider>
+          </SessionGuard>
+        </Providers>
       </body>
     </html>
   );
