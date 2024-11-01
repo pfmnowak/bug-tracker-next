@@ -1,3 +1,4 @@
+import { fakeTasks } from "@/mock/tasks";
 import {
   Box,
   Table,
@@ -7,7 +8,6 @@ import {
   TableRow,
   Typography,
 } from "@mui/material";
-import { fakeTasks } from "../mock/tasks";
 
 export default function Tasks() {
   const tasks = fakeTasks;

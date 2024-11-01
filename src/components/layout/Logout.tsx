@@ -1,5 +1,5 @@
 "use client";
-import federatedLogout from "@/app/utils/federatedLogout";
+import federatedLogout from "@/utils/federatedLogout";
 import { Button } from "@mui/material";
 
 export default function Logout() {

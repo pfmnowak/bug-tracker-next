@@ -1,4 +1,4 @@
-import ThemeModeSwitcher from "../ui/ThemeModeSwitcher";
+import ThemeModeSwitcher from "@/ui/ThemeModeSwitcher";
 
 export default function Header() {
   return (

@@ -1,3 +1,8 @@
+import Header from "@/components/layout/Header";
+import Sidebar from "@/components/layout/Sidebar";
+import SessionGuard from "@/components/SessionGuard";
+import { Providers } from "@/providers/Providers";
+import theme from "@/ui/theme";
 import {
   Box,
   Container,
@@ -5,14 +10,8 @@ import {
   Divider,
   ThemeProvider,
 } from "@mui/material";
-
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
-import { Providers } from "./Providers";
-import SessionGuard from "./components/SessionGuard";
-import Header from "./layout/Header";
-import Sidebar from "./layout/Sidebar";
-import theme from "./ui/theme";
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
