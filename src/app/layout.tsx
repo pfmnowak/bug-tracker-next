@@ -1,16 +1,9 @@
-import Header from "@/components/layout/Header";
-import Sidebar from "@/components/layout/Sidebar";
-import SessionGuard from "@/components/SessionGuard";
 import { Providers } from "@/providers/Providers";
+import SessionGuard from "@/providers/SessionGuard";
+import MainLayoutProvider from "@/ui/MainLayoutProvider";
 import theme from "@/ui/theme";
-import {
-  Box,
-  Container,
-  CssBaseline,
-  Divider,
-  ThemeProvider,
-} from "@mui/material";
-import type { Metadata } from "next";
+import { ThemeProvider } from "@mui/material";
+import { Metadata } from "next";
 import { Roboto } from "next/font/google";
 
 const roboto = Roboto({
@@ -35,26 +28,8 @@ export default function RootLayout({
       <body className={roboto.variable}>
         <Providers>
           <SessionGuard>
-            <ThemeProvider theme={theme} defaultMode="light">
-              <CssBaseline enableColorScheme />
-              <Sidebar />
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  height: "100vh",
-                  ml: "280px",
-                }}
-              >
-                <Header />
-                <Divider sx={{ mx: 3 }} />
-                <Container
-                  maxWidth={false}
-                  sx={{ maxWidth: "100%", width: "100%", flex: 1, pb: 3 }}
-                >
-                  {children}
-                </Container>
-              </Box>
+            <ThemeProvider theme={theme}>
+              <MainLayoutProvider>{children}</MainLayoutProvider>
             </ThemeProvider>
           </SessionGuard>
         </Providers>
