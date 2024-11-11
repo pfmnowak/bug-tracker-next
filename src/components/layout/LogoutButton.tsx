@@ -2,7 +2,7 @@
 import federatedLogout from "@/utils/federatedLogout";
 import { Button } from "@mui/material";
 
-export default function Logout() {
+export default function LogoutButton() {
   return (
     <Button
       variant="contained"

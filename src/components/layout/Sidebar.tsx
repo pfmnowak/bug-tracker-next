@@ -1,5 +1,6 @@
 import { Drawer } from "@mui/material";
 import Link from "next/link";
+import LogoutButton from "./LogoutButton";
 
 const Sidebar = () => {
   return (
@@ -13,8 +14,9 @@ const Sidebar = () => {
         },
       }}
     >
-      <Link href="/">Home</Link>
+      <Link href="/dashboard">Dashboard</Link>
       <Link href="/tasks">Tasks</Link>
+      <LogoutButton />
     </Drawer>
   );
 };

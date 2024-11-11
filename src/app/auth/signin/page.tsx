@@ -1,5 +1,5 @@
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import Login from "@/components/layout/Login";
+import LoginButton from "@/components/layout/LoginButton";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 
@@ -25,7 +25,7 @@ export default async function Signin({ searchParams }: SignInPageProp) {
     <div>
       <h3>Our own custom login page</h3>
       {error && <div>{signinErrors[error.toLowerCase()]}</div>}
-      <Login />
+      <LoginButton />
     </div>
   );
 }

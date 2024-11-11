@@ -18,7 +18,7 @@ export default function Tasks() {
 
   return (
     <Box>
-      <Typography>All Tasks</Typography>
+      <Typography variant="h4">All Tasks</Typography>
       <Box>
         <Table>
           <TableHead>

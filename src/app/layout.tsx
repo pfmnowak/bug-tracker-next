@@ -1,6 +1,5 @@
 import { Providers } from "@/providers/Providers";
 import SessionGuard from "@/providers/SessionGuard";
-import MainLayoutProvider from "@/ui/MainLayoutProvider";
 import theme from "@/ui/theme";
 import { ThemeProvider } from "@mui/material";
 import { Metadata } from "next";
@@ -28,9 +27,7 @@ export default function RootLayout({
       <body className={roboto.variable}>
         <Providers>
           <SessionGuard>
-            <ThemeProvider theme={theme}>
-              <MainLayoutProvider>{children}</MainLayoutProvider>
-            </ThemeProvider>
+            <ThemeProvider theme={theme}>{children}</ThemeProvider>
           </SessionGuard>
         </Providers>
       </body>
